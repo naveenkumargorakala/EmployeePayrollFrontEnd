@@ -1,5 +1,5 @@
-const salary = document.getElementById('#salary');
-const output = document.getElementById('#salary-output');
+const salary = document.querySelector('#salary');
+const output = document.querySelector('.salary-output');
 output.textContent = salary.value;
 salary.addEventListener('input', function(){
     output.textContent = salary.value;
@@ -19,11 +19,11 @@ class EmployeePayrollData {
     }
 
     set name(name){
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
          if(nameRegex.test(name))
          this._name = name;
          else
-         throw " Name is Incorrect format";
+         throw "**** Name is Incorrect****";
     }
     get profileImage(){
         return this._profileImage;
